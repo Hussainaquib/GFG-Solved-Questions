@@ -2,10 +2,7 @@
 
 class Solution:
     def multiplyStrings(self,s1,s2):
-        x=""
-        val=int(s1)*int(s2)
-        # x+=str(val)
-        return val
+        return int(s1)*int(s2)
 
 
 #{ 
