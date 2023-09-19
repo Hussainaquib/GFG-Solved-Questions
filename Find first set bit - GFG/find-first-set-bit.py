@@ -12,15 +12,24 @@ import math
 class Solution:
     
     #Function to find position of first set bit in the given number.
-    def getFirstSetBit(self,n):
-        a=bin(n)[2:]
-        b=[int(x) for x in str(a)]
-        b.reverse()
-        for i in range(len(b)):
-            if b[i]==1:
-                return i+1
-        return 0
+    def getFirstSetBit(self, n):
+        if n == 0:
+            return 0
         
+        # Initialize a position variable.
+        position = 1
+        
+        # Iterate through the bits of n.
+        while n > 0:
+            # Check if the rightmost bit is set (i.e., it's 1).
+            if n & 1 == 1:
+                return position
+            # Right shift n to check the next bit.
+            n = n >> 1
+            position += 1
+        
+        # If no set bit is found, return 0.
+        return 0
 
 #{ 
  # Driver Code Starts.
